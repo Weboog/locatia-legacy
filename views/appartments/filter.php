@@ -4,9 +4,9 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Locatia</title>
-    <link rel="icon" type="image/png" href="/locatia/public/img/icons/favicon.png">
-    <link rel="stylesheet" href="/locatia/public/css/style.css">
-    <script src="/locatia/public/script/main.js"></script>
+    <link rel="icon" type="image/png" href="/public/img/icons/favicon.png">
+    <link rel="stylesheet" href="/public/css/style.css">
+    <script src="/public/script/main.js"></script>
 </head>
 <body>
 <?php
@@ -17,10 +17,10 @@ include_once ROOT . DS . 'inc/filter.php'
     <?php
     $wrapper = '<div class="wrapper">';
     $figure = '<figure>
-            <a href="/locatia/appartments/details/%d" target="_self">
+            <a href="/appartments/details/%d" target="_self">
             <picture>
-                <source media="(min-width: 960px)" srcset="/locatia/public/img/thumb/big/%d.jpg">
-                <img src="/locatia/public/img/thumb/small/%d.jpg" alt="Thumb">
+                <source media="(min-width: 960px)" srcset="/public/img/thumb/big/%d.jpg">
+                <img src="/public/img/thumb/small/%d.jpg" alt="Thumb">
             </picture>
             <figcaption>
                 <ul>
@@ -54,7 +54,7 @@ include_once ROOT . DS . 'inc/filter.php'
                 <li><a href="#"><i class="instagram"></i></a></li>
             </ul>';
     $btn = '<p class="btn">
-                <a href="/locatia/appartments/details/%d" target="_self">Voir en détails</a>
+                <a href="/appartments/details/%d" target="_self">Voir en détails</a>
             </p>';
 
     foreach ($data as $appart){
@@ -93,13 +93,13 @@ include_once ROOT . DS . 'inc/filter.php'
         if ($index <= 1){
             $index++;
         }
-        echo sprintf('<li><a href="/locatia/%s%d">&lt;</a></li>', $get_url, $index-1);
+        echo sprintf('<li><a href="/%s%d">&lt;</a></li>', $get_url, $index-1);
         $division = count($data) / 3;
             for ($i=$index; $i<=$index+$division; $i++){
-                echo sprintf('<li><a href="/locatia/%s%d">%d</a></li>', $get_url, $i-1, $i-1);
+                echo sprintf('<li><a href="/%s%d">%d</a></li>', $get_url, $i-1, $i-1);
             }
         $index = explode('/', $_GET['url'])[4];
-        echo sprintf('<li><a href="/locatia/%s%d">&gt;</a></li>', $get_url, $index+1);
+        echo sprintf('<li><a href="/%s%d">&gt;</a></li>', $get_url, $index+1);
         ?>
     </ul>
 </div>
@@ -120,7 +120,7 @@ include_once ROOT . DS . 'inc/filter.php'
         </div>
         <div class="buttons-box">
             <a href="#filter-budget">Annuler</a>
-            <a href="#" class="" data-href="/locatia/appartments/filter/price/">Valider</a>
+            <a href="#" class="" data-href="/appartments/filter/price/">Valider</a>
         </div>
     </div>
 </div>
@@ -140,7 +140,7 @@ include_once ROOT . DS . 'inc/filter.php'
         </div>
         <div class="buttons-box">
             <a href="#filter-surface">Annuler</a>
-            <a href="#" class="" data-href="/locatia/appartments/filter/surface/">Valider</a>
+            <a href="#" class="" data-href="/appartments/filter/surface/">Valider</a>
         </div>
     </div>
 </div>
@@ -160,7 +160,7 @@ include_once ROOT . DS . 'inc/filter.php'
         </div>
         <div class="buttons-box">
             <a href="#filter-pieces">Annuler</a>
-            <a href="#" class="" data-href="/locatia/appartments/filter/pieces/">Valider</a>
+            <a href="#" class="" data-href="/appartments/filter/pieces/">Valider</a>
         </div>
     </div>
 </div>
