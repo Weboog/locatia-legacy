@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="WebServers">
+    <option name="servers">
+      <webServer id="8868a4a4-f457-47c2-b57a-9bbd927e1bc7" name="locatia" url="http://locatia.ma">
+        <fileTransfer host="ftp.alikhoua.com" port="21">
+          <advancedOptions>
+            <advancedOptions dataProtectionLevel="Private" passiveMode="true" />
+          </advancedOptions>
+          <option name="port" value="21" />
+        </fileTransfer>
+      </webServer>
+      <webServer id="808e22e6-2a0c-4a49-a774-bf4acc73f077" name="orgfree" url="http://sites.orgfree.com ">
+        <fileTransfer host="sites.orgfree.com " port="21">
+          <advancedOptions>
+            <advancedOptions dataProtectionLevel="Private" passiveMode="true" shareSSLContext="true" />
+          </advancedOptions>
+          <option name="port" value="21" />
+        </fileTransfer>
+      </webServer>
+    </option>
+  </component>
+</project>

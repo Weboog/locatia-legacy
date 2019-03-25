@@ -1,0 +1,96 @@
+section{
+  position: relative;
+  font-family: $font-exo;
+  color: $color-white;
+  div.map{
+    background-image: url('../img/map.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 150px;
+  }
+  div.gradient{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 150px;
+    background-image: linear-gradient(to right, hsla(175.74, 100%, 40%, 0.6), hsla(175, 0, 10%, 0.6));
+    z-index: 10;
+    @include display-flex();
+    @include justify-content(center);
+    @include align-items(center);
+    p{
+      text-shadow: 0 0 5px $color-black;
+      strong{
+        font-style: italic;
+        font-weight: 900;
+        font-size:2.5em;
+      }
+      b{
+        font-size: 0.9em;
+        &::before{
+          content: '\A';
+        }
+      }
+      span{
+        display: none;
+      }
+      &:first-child{
+        padding-left: 3em;
+      }
+      &:last-child{
+        text-align: right;
+        padding-right: 3em;
+      }
+    }
+    div.sep{
+      display: none;
+    }
+  }
+}
+
+//Desktop////////////////////////////////////////////////////////////////////////////
+@include breakpoint($desktop){
+  @include layout($mob $desk);
+  section{
+    div.map{
+      height: 300px;
+    }
+    div.gradient{
+      height: 300px;
+      @include align-items(flex-start);
+      p{
+        margin-top: 4.5em;
+        width: 25%;
+        strong{
+          font-weight: 700;
+          font-size:2.8em;
+        }
+        b{
+          font-weight: 500;
+          &::before{
+            content: '';
+          }
+        }
+        span{
+          display: block;
+          font-size: 0.8em;
+          line-height: 120%;
+        }
+        &:first-child{
+          padding-left: 0;
+          margin-right: 4em;
+        }
+        &:last-child{
+          padding-right: 0;
+          margin-left: 4em;
+        }
+      }
+      div.sep{
+        display: block;
+        border-right: 1px solid $color-white;
+        height: 75px;
+      }
+    }
+  }
+}

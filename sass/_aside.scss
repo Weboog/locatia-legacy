@@ -1,0 +1,43 @@
+aside{
+    display: none;
+    div{
+        position: relative;
+        top: 2em;
+        background-color: $color-white;
+        border: 1px solid $color-grey;
+        padding: 2.8em 0.8em 0.8em 0.8em;
+        font-family: $font-exo;
+        i.info{
+            position: absolute;
+            top: -35px;
+            left: 0;
+            right: 0;
+            margin: auto;
+            display: block;
+            border-radius: 50%;
+            background-color: $color-black;
+            border: 2px solid darken($color-grey, 10%);
+            @include icons-sprite(info);
+        }
+        h1{
+            font-weight: 500;
+            i{
+                display: inline-block;
+                @include icons-sprite(circle);
+                margin-right: 0.5em;
+            }
+        }
+        p{
+            font-size: 0.8em;
+            padding: 1em;
+        }
+    }
+}
+//Desktop////////////////////////////////////////////////////////////
+@include breakpoint($desktop){
+    @include layout($mob $desk);
+    aside{
+        display: block;
+        padding: 1em 0;
+    }
+}

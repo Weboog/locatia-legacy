@@ -1,0 +1,63 @@
+ul.filter{
+  border: 1px solid $color-grey;
+  background-color: $color-white;
+  @include display-flex();
+  @include justify-content(center);
+  //@include horizontal-list();
+  padding: 0 0.8em;
+  li{
+    a{
+      display: block;
+      padding: 0.5em 0.5em 0.8em 0.5em;
+      text-decoration: none;
+      font-family: $font-cuprum;
+      color: $color-black;
+      font-size: 1.1em;
+      font-weight: 500;
+      @include display-flex();
+      @include align-items(baseline);
+      &:hover{
+        background-color: $color-light-grey;
+      }
+      i{
+        margin-right: 0.2em;
+        &.budget{
+          @include icons-sprite(budget);
+        }
+        &.surface{
+          @include icons-sprite(surface);
+        }
+        &.pieces{
+          @include icons-sprite(pieces);
+        }
+        &.dots{
+          display: none;
+          @include icons-sprite(dots_dark);
+        }
+      }
+    }
+  }
+}
+
+//Desktop////////////////////////////////////////////////////////////////
+@include breakpoint($desktop){
+  @include layout($mob $desk);
+  ul.filter{
+    @include span(10 of 24);
+    padding: 0 0.5em;
+    position: absolute;
+    top: 17em;
+    left: 0;
+    right: 0;
+    margin: auto;
+    z-index: 1010;
+    li{
+      a{
+        i.dots{
+          display: block;
+          margin-left: 0.3em;
+        }
+      }
+    }
+  }
+}

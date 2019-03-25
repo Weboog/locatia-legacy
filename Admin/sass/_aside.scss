@@ -1,0 +1,76 @@
+#menu{
+  background-color: $color-black;
+  /*display: flex;
+  flex-direction: thumb;*/
+  display: grid;
+  grid-row-gap: 2rem;
+  align-content: space-between;
+  .logo{
+    margin-top: 1rem;
+    background-image: url(../img/locatia-logo.svg);
+    background-repeat: no-repeat;
+    background-position: center;
+    height: 8rem;
+  }
+  .main_menu{
+    li{
+      &:not(:last-child){
+        margin-bottom: 1.5rem;
+      }
+      a{
+        position: relative;
+        color: $color-grey-bg;
+        font-size: 1rem;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        text-transform: uppercase;
+        i{
+          position: absolute;
+          top: -0.5rem;
+          right: 2.5rem;
+          display: block;
+          padding: 0 0.5rem;
+          background-color: crimson;
+          color: white;
+          border-radius: 0.3rem;
+          font-weight: 600;
+          z-index: 10;
+        }
+        .icon{
+          fill: white;
+          width: 3rem;
+          height: 3rem;
+          margin-bottom: 1rem;
+        }
+        span{
+          transform: translateX(-200%);
+          transition: all .2s ease-out;
+        }
+        &:hover span{
+          font-weight: 600;
+          transform: translateX(0);
+        }
+        &:hover .icon{
+          transform: rotate(5deg);
+          transition: all .2s ease-out;
+        }
+        &:hover .icon--blue{
+          fill: $color-blue;
+        }
+        &:hover .icon--green{
+          fill: lawngreen;
+        }
+        &:hover .icon--orange{
+          fill: orangered;
+        }
+      }
+    }
+  }
+  .copyright{
+    color: $color-grey-bg;
+    font-size: 0.8rem;
+    text-align: center;
+    margin-bottom: 1rem;
+  }
+}

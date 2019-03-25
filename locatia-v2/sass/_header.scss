@@ -1,0 +1,21 @@
+.header{
+    background-image: linear-gradient(to right bottom,rgba($color-violet, 0.9), rgba($color-orange, 0.9)), url("../img/appartments.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 80vh;
+}
+.navbar{
+    padding: 2rem 0;
+    .menu{
+        display: grid;
+        grid-template-columns: repeat(2, auto);
+        grid-column-gap: 2rem;
+        justify-self: start;
+        margin-left: 5rem;
+    }
+    .icon-nav{
+        width: 2.5rem;
+        height: 2.5rem;
+        fill: $color-white;
+    }
+}

@@ -1,0 +1,11 @@
+{
+  "name": "admin",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "live": "live-server --browser=firefox"
+  },
+  "author": "",
+  "license": "ISC"
+}

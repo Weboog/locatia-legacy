@@ -1,0 +1,29 @@
+div.msg{
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 100000;
+  background-color: hsla(0, 100%, 0%, 0.8);
+  width: 100%;
+  height: 100%;
+  strong{
+    display: block;
+    position: absolute;
+    top: 50%;
+    width: 100%;
+    text-align: center;
+    transform: translateY(-50%);
+    padding: 2em;
+    font-size: 2em;
+    font-family: $font-roboto;
+    font-weight: 100;
+    background-color: $color-light-grey;
+    color: $color-black-text;
+    &.success{
+      //color: $color-blue-green;
+    }
+    &.fail{
+      //color: crimson;
+    }
+  }
+}

@@ -1,0 +1,23 @@
+#menu{
+  position: fixed;
+  top: 0;
+  width: 10rem;
+  height: 100vh;
+}
+#header{
+  position: fixed;
+  top: 0;
+  left: 10rem;
+  width: 100%;
+  height: 5rem;
+}
+#navigation{
+  position: fixed;
+  top: 5rem;
+  left: 10rem;
+  width: 100%;
+  height: 5rem;
+}
+#content{
+  margin: 10rem 0 0 10rem;
+}

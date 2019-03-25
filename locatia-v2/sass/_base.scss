@@ -1,0 +1,25 @@
+*, *::before, *::after{
+    padding: 0;
+    margin: 0;
+}
+html{
+    font-family: $font-open-sans;
+    font-size: 62.5%;
+    box-sizing: border-box;
+    color: $color-black;
+}
+ul{
+    list-style: none;
+}
+a{
+    text-decoration: none;
+    color: inherit;
+}
+input, textarea, select{
+    font-family: inherit;
+}
+button{
+    border: none;
+    border-radius: 0;
+    background: transparent;
+}

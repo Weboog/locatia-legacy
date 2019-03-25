@@ -1,0 +1,28 @@
+.pagination{
+  clear: both;
+  ul{
+    display: flex;
+    justify-content: center;
+  }
+  li{
+    margin-right: .5em;
+    &:last-of-type{
+      margin-right: 0;
+    }
+    a{
+      display: block;
+      padding: 0.5em 0.7em;
+      text-align: center;
+      text-decoration: none;
+      border-radius: 3px;
+      border: 1px solid darken($color-grey, 10%);
+      color: $color-black;
+      font-family: $font-cuprum;
+      transition: all .2s ease-out;
+      &:hover{
+        background-color: $color-black;
+        color: $color-green;
+      }
+    }
+  }
+}

@@ -1,0 +1,237 @@
+main{
+    padding: 1em 0;
+  margin-bottom: 1.5em;
+    div.appart{
+        @include span(5.5 of 6);
+        @include pre(1/4 of 6);
+        padding: 0;
+        margin-bottom: 0.8em;
+        border: 1px solid $color-grey;
+        background-color: $color-white;
+        figure{
+        position: relative;
+            img{
+                width: 100%;
+            }
+            figcaption{
+                width: 100%;
+                position: absolute;
+                bottom: 2px;
+                font-family: $font-exo;
+                font-style: 500;
+                font-size: 0.875em;
+                background-color: transparentize(black, 0.5);
+                color: $color-white;
+                ul{
+                    @include display-flex();
+                    @include justify-content(space-around);
+                    padding: 0.5em 0;
+                    li{
+                        i{
+                            display: inline-block;
+                            &.views{
+                                @include icons-sprite(views);
+                            }
+                            &.album{
+                                @include icons-sprite(album);
+                            }
+                        }
+                    }
+                }
+            }
+        }
+        div.titles{
+            padding: 0.5em 0.8em;
+            h1{
+                float: left;
+                color: $color-black-text;
+                font-family: $font-exo;
+                font-weight: 600;
+              text-transform: capitalize;
+                //padding: 0.5em 0.5em 0.2em;
+            }
+            h3{
+                clear: both;
+                color: $color-blue-green;
+                font-family: $font-cuprum;
+                border-bottom: 1px dashed $color-grey;
+                padding: 0 0 0.5em 0;
+            }
+            a{
+              i{
+
+              }
+              i.fav{
+                  float: right;
+                  @include icons-sprite(fav);
+                &.fav--clicked{
+                  @include icons-sprite(fav_hover);
+                }
+              }
+              i.delete{
+                float: right;
+                @include icons-sprite(delete);
+
+              }
+            }
+        }
+        ul.specs{
+            font-family: $font-cuprum;
+            font-weight: 600;
+            color: $color-black-text;
+            padding: 0.5em 0.8em;
+            li{
+                i{
+                    display: inline-block;
+                    margin-right: 0.5em;
+                    &.pieces{
+                        @include icons-sprite(pieces);
+                    }
+                    &.surface{
+                        @include icons-sprite(surface);
+                    }
+                    &.room{
+                        @include icons-sprite(room);
+                    }
+                    &.position{
+                        @include icons-sprite(position);
+                    }
+                }
+            }
+        }
+        p.price{
+            font-family: $font-exo;
+            font-weight: 500;
+            color: $color-blue-green;
+            font-size: 1.8em;
+            text-align: center;
+            padding-bottom: 0.5em;
+            small{
+                color: $color-black;
+                font-size: 0.4em;
+            }
+            b{
+
+            }
+        }
+        ul.contacting{
+            @include display-flex();
+            @include justify-content(center);
+            font-family: $font-cuprum;
+            font-size: 1.1em;
+            font-weight: 100;
+            color: $color-blue-green;
+            background-color: $color-light-grey;//lighten($color-light-grey, 5%);
+            li{
+                padding: 0.5em;
+                a{
+                    display: block;
+                    text-decoration: none;
+                    color: $color-blue-green;
+                }
+                i{
+                    display: inline-block;
+                    margin-right: 0.3em;
+                    &.call{
+                        @include icons-sprite(call);
+                    }
+                    &.callback{
+                        @include icons-sprite(callback);
+                    }
+                }
+                b{
+
+                }
+            }
+        }
+        ul.share{
+            @include display-flex();
+            @include justify-content(center);
+            li{
+                margin: 0.5em;
+                a{
+                    i{
+                        display: block;
+
+                        &.facebook{
+                            @include icons-sprite(facebook);
+                        }
+                        &.instagram{
+                            @include icons-sprite(instagram);
+                        }
+                    }
+                }
+            }
+        }
+        p.btn{
+            padding: 0 0.8em 0.8em 0.8em;
+            a{
+                text-decoration: none;
+                display: block;
+                text-align: center;
+                border: 1px solid lighten($color-black, 50%);
+                color: $color-black-text;
+                font-family: $font-cuprum;
+                font-weight: 100;
+                font-size: 1.1em;
+                padding: 0.5em;
+                &:hover{
+                    border: 1px solid $color-green;
+                }
+            }
+        }
+    }
+}
+
+//Desktop///////////////////////////////////////////////////////////////////////////////////////////
+@include breakpoint($desktop){
+    @include layout($mob $desk);
+    main{
+      @include pre(1/4 of 24);
+        div.appart{
+          @include span(7.5 of 24);
+          @include pre(0 of 24);
+          @include post(1/2 of 24);
+          @include display-flex();
+          @include align-items(stretch);
+          padding: 0.8em 0 0.8em 0.8em;
+          margin-bottom: 1em;
+          max-width: 455px;
+            figure{
+              width: 50%;
+              img{
+                height: 100%;
+                border: 1px solid $color-light-grey;
+              }
+              figcaption{
+                bottom: 0;
+              }
+            }
+            div.wrapper{
+              width: 50%;
+              div.titles{
+                padding: 0 0.8em 0.5em;
+              }
+              ul.specs{
+                  li{
+                      margin-bottom: 0.3em;
+                  }
+              }
+              ul.contacting{
+                background-color: transparent;
+                @include flex-direction(column);
+                padding: 0 1em;
+                li{
+                  background-color: lighten($color-light-grey, 5%);
+                  &:first-child{
+                    border-bottom: 1px dashed $color-grey;
+                  }
+                }
+              }
+              p.btn{
+                padding: 0 0.8em;
+              }
+            }
+        }
+    }
+}

@@ -1,0 +1,30 @@
+*{
+  padding: 0;
+  margin: 0;
+}
+ul{
+  list-style: none;
+}
+
+
+@media (orientation: landscape) {
+  .slider{
+    li{
+      img{
+        width: auto;
+        height: 98vh;
+      }
+    }
+  }
+}
+.slider{
+  position: relative;
+  background-color: crimson;
+    li{
+      position: absolute;
+      top: 0;
+      img{
+        width: 100%;
+      }
+    }
+}

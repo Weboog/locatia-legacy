@@ -1,0 +1,208 @@
+:root {
+  --color-black: #333;
+  --color-green: #8CC63F;
+  --color-white-real: #FFFFFF;
+  --color-white: #F2F2F2;
+  --color-grey: #808080;
+  --color-grey-stroke: #999999;
+  --color-violet: #d4145a;
+  --color-sea-green: #00A99D;
+  --font-cuprum: 'Cuprum', sans-serif;
+  --font-exo: 'Exo', sans-serif;
+}
+
+@mixin shadow(){
+  box-shadow:  0 5px 5px rgba(0 ,0 ,0 , 0.3);
+}
+
+.popup {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100vh;
+  z-index: 1100;
+  background-color: rgba(0, 0, 0, 0.7);
+  opacity: 0;
+  visibility: hidden;
+  transition: all 0.2s ease-in;
+}
+.popup:target {
+  opacity: 1;
+  visibility: visible;
+}
+.popup:target .popup__content {
+  transform: translate(-50%, -50%) scale(1);
+  @media screen and (min-width: $tablet) {
+    width: 25%;
+  }
+}
+.popup__content {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  width: 65%;
+  transform: translate(-50%, -50%) scale(0);
+  box-shadow: 0 1rem 4rem rgba(0, 0, 0, 0.3);
+  background-color: var(--color-white);
+  padding: 2rem;
+  border-radius: 3px;
+  transition: all 0.2s 0.2s ease-in;
+}
+
+.popup__message {
+  display: none;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  padding: 2em;
+  transform: translate(-50%,-50%);
+  background-color: $color-white;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  border-radius: 3px;
+  font-family: $font-cuprum;
+  @include shadow;
+  transition: all .2s ease-out;
+  & > * {
+    margin-bottom: 1em;
+    &:last-child{
+      margin-bottom: 0;
+    }
+  }
+  h3 {
+    color: darken($color-green, 20%);
+    background-color: lighten($color-green, 40%);
+    border: 1px solid darken($color-green, 20%);
+    padding: 0.4em 0;
+    align-self: stretch;
+    text-align: center;
+  }
+  p{
+    color: darkslategrey;
+    line-height: 1.2;
+  }
+  a{
+    justify-self: flex-start;
+    align-self: flex-end;
+    display: block;
+    text-decoration: none;
+    padding: 0.5em 1em;
+    color: $color-white;
+    background-color: $color-blue-green;
+    border-radius: 3px;
+  }
+}
+.show_message{
+  display: flex;
+}
+.popup__content h2 {
+  font-family: $font-exo;
+  font-size: 1.2rem;
+  font-weight: 500;
+  color: var(--color-black);
+  padding-bottom: 1rem;
+}
+.popup__content input {
+  padding: 0.5rem 1rem;
+  border-radius: 3px;
+  border: 1px solid var(--color-grey);
+  width: 36%;
+}
+.popup__content .select-box {
+  margin: 2rem 0;
+}
+.popup__content .select-box select {
+  display: block;
+  width: 100%;
+  padding: 0.5rem;
+  text-transform: uppercase;
+}
+.popup__content .select-box select :checked {
+  color: var(--color-violet);
+  font-weight: 600;
+}
+.popup__content .range-box {
+  display: flex;
+  justify-content: center;
+}
+.popup__content .range-box input:not(:last-child) {
+  margin-right: 1rem;
+}
+.popup__content p.separator {
+  text-align: center;
+  font-size: 1.6rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.popup__content .buttons-box {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  font-size: 1rem;
+  text-align: center;
+  font-family: $font-cuprum;
+}
+.popup__content .buttons-box a {
+  color: var(--color-black);
+  display: block;
+  padding: 0.5rem 1.5rem;
+  border-radius: 3px;
+  border: 1px solid var(--color-grey);
+  text-decoration: none;
+}
+.popup__content .buttons-box a.ok {
+  background-color: var(--color-green);
+  color: var(--color-white);
+}
+.popup__content--budget .select-box {
+  margin: 1rem 0;
+}
+.popup__content--budget .range-box {
+  margin-bottom: 1rem;
+}
+.popup__content--callback .client {
+  display: flex;
+  flex-direction: column;
+  input{
+    width: initial;
+  }
+}
+.popup__content--callback .client p {
+  font-size: 1rem;
+  font-family: $font-cuprum;
+  color: var(--color-grey);
+  margin: 2rem 0;
+}
+.popup__content--callback .client p.nb {
+  border: 1px dashed var(--color-grey-stroke);
+  padding: 0.5rem;
+}
+.popup__content--callback .client form {
+  display: flex;
+  flex-direction: column;
+}
+.popup__content--callback .client form input:not(:last-child) {
+  margin-bottom: 1rem;
+}
+
+p.msg_form{
+  flex-basis: 100%;
+  margin: 1.5em 0 0;
+  padding: 0.5em 1em;
+  font-size: 0.8em;
+  font-family: $font-cuprum;
+  &.success{
+    color: darken($color-green, 30%);
+    background-color: lighten($color-green, 30%);
+    border: 1px solid darken($color-green, 10%);
+  }
+  &.fail{
+    color: darken(red, 20%);
+    background-color: lighten(red, 30%);
+    border: 1px solid darken(red, 10%);
+  }
+}

@@ -1,0 +1,50 @@
+@include layout($mob);
+body{
+  @include container;
+  background-color: $color-light-grey;
+  header, footer{
+    @include span(6 of 6);
+  }
+  section{
+    @include span(6);
+    padding: 0;
+  }
+  main{
+    @include span(6);
+  }
+  aside{
+    @include span(6);
+  }
+}
+
+@include breakpoint($tablet) {
+  @include layout($mob $tab);
+  body {
+    @include container;
+    header, footer {
+      @include span(12 of 12);
+    }
+    main {
+      @include span(9 of 12);
+    }
+    aside {
+      @include span(3 of 12 last);
+    }
+  }
+}
+
+@include breakpoint($desktop){
+  @include layout($mob $desk);
+  body{
+    @include container;
+    header, footer{
+      @include span(24 of 24);
+    }
+    main{
+      @include span(24 of 24);
+    }
+    aside{
+      @include span(0 of 24 last);
+    }
+  }
+}

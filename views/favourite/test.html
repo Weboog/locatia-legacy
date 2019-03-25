@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Test hover</title>
+    <link rel="stylesheet" href="/locatia/public/css/test.css">
+</head>
+<body>
+
+    <div class="wrapper">
+        <ul class="filter">
+            <li>
+                <a href="#budget" class="btn_budget">
+                    <i class="budget"></i> Budget <i class="dots"></i>
+                </a>
+            </li> <!---->
+            <li>
+                <a href="#surface" class="btn_surface">
+                    <i class="surface"></i> Surface <i class="dots"></i>
+                </a>
+            </li><!---->
+            <li>
+                <a href="#pieces" class="btn_pieces"><i class="pieces">
+                </i> Pieces <i class="dots"></i>
+                </a>
+            </li><!---->
+        </ul>
+        <div class="markup markup--0" id="budget">
+            <label for="sense-budget">Trier par budget</label>
+            <select name="sense" id="sense-budget">
+                <option value="0">Moins cher</option>
+                <option value="1">Plus cher</option>
+            </select>
+            <div class="range">
+                <p>Trier entre min et max</p>
+                <input type="text" name="min_budget" placeholder="min">
+                <input type="text" name="max_budget" placeholder="max">
+            </div>
+            <div class="buttons-control">
+                <a href="#" class="cancel">cancel</a>
+                <a href="#" class="validate">validate</a>
+            </div>
+        </div>
+        <div class="markup markup--1" id="surface">
+            <label for="sense-surface">Trier par surface</label>
+            <select name="sense" id="sense-surface">
+                <option value="0">Petite surface</option>
+                <option value="1">Grande surface</option>
+            </select>
+            <div class="range">
+                <p>Trier entre min et max</p>
+                <input type="text" name="min_budget" placeholder="min">
+                <input type="text" name="max_budget" placeholder="max">
+            </div>
+            <div class="buttons-control">
+                <a href="#" class="cancel">cancel</a>
+                <a href="#" class="validate">validate</a>
+            </div>
+        </div>
+        <div class="markup markup--2" id="pieces">
+            <label for="sense-pieces">Trier par nombre de pièces</label>
+            <select name="sense" id="sense-pieces">
+                <option value="0">Moins de pièces</option>
+                <option value="0">Beaucoup de pièces</option>
+            </select>
+            <div class="range">
+                <p>Trier entre min et max</p>
+                <input type="text" name="min_budget" placeholder="min">
+                <input type="text" name="max_budget" placeholder="max">
+            </div>
+            <div class="buttons-control">
+                <a href="#" class="cancel">cancel</a>
+                <a href="#" class="validate">validate</a>
+            </div>
+        </div>
+    </div>
+
+</body>
+</html>
