@@ -13,7 +13,7 @@ class Controller
     }
 
     public function getModel() {
-        $model = get_class($this) . 'Model';
+        $model = strtolower(get_class($this)) . 'Model';
         require_once MODELS . DS . $model . '.php';
         return new $model();
     }
