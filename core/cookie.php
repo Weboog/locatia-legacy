@@ -10,6 +10,10 @@ class Cookie
     //FORMAT ot return values of the cookie
     public static $FORMAT_STR = 'string';
     public static $FORMAT_ARRAY = 'array';
+    
+    //CONSTANTS
+    const FORMAT_STR = 'string';
+    const FORMAT_ARRAY = 'array';
 
     //GET COOKIE VALUES AS STRING OR ARRAY
     /**
